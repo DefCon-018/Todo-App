@@ -1,0 +1,120 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+.container{
+    width: 70%;
+    margin: auto;
+    box-shadow: 1px 1px 1px 1px gray;
+    margin-top: 15px;
+}
+
+.center-text{
+    text-align: center;
+}
+#heading h1{
+    color: gray;
+    font-family: sans-serif;
+    padding: 15px;
+}
+
+.common{
+    border-top: 2px solid gray;
+    margin-top: 10px;
+}
+input{
+    width: 90%;
+    border: none;
+    margin-left: 8px;
+    padding: 8px;
+    font-size: 1.1rem;
+}
+input:focus{
+    outline: none;
+}
+
+.description{
+    padding-top: 8px;
+}
+.other-info{
+    display: flex;
+    border-bottom: 2px solid gray;
+}
+
+.category{
+    width: 50%;
+    padding-top: 8px;
+}
+#time{
+    width: 50%;
+    border-left: 2px solid gray;
+    padding-top: 8px;
+}
+label{
+    margin: 8px;
+    padding: 8px;
+}
+.dropdown{
+    margin-left: 8px;
+    width: 80%;
+    border: none;
+    color: gray;
+    padding: 8px;
+}
+.dropdown:focus{
+    outline: none;
+}
+
+
+.buttons{
+    display: flex;
+    height: 150px;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    height: 60px;
+    width: 180px;
+    margin-left: 10px;
+    font-family: sans-serif;
+    font-size: 1.3rem;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+span{
+    padding: 3px;
+}
+
+#add{
+    background-color: darkgreen;
+}
+#delete{
+    background-color: red;
+}
+button:focus{
+    outline: none;
+}
+
+.task{
+    border-top: 1px solid gray;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.part-1{
+    width: 80%;
+    margin: 10px;
+}
+.part-2{
+    width: 20%;
+}
+#tag{
+    width: 100%;
+    color: white;
+    padding: 5px;
+    font-size: 1.1rem;
+}
+

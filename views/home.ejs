@@ -4,8 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo App</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link rel= "stylesheet" href= "/css/home.css">
 </head>
 <body>
-    <h1>TODO App</h1>
+    <div class = "container">
+        <div id= "heading" class="center-text">
+            <h1>TODO App</h1>
+        </div>
+        <div class= "common">
+            <form action="/create-task" method="POST">
+                <div class="description">
+                    <label for="desc">DESCRIPTION</label>
+                    <input type="text" id= "desc" placeholder="What do you need to do ?" name= "description">
+                </div>
+                <div class="other-info common">
+                    <div class= "category">
+                        <label for="category">CATEGORY</label>
+                        <select  id= "category" class= "dropdown" name= "category">
+                            <option value="personal">Personal</option>
+                            <option value="school">School</option>
+                            <option value="cleaning">Cleaning</option>
+                            <option value="work">Work</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    <div id= "time">
+                        <label for="time">DUE DATE</label>
+                        <input type="date" name= "date">
+                    </div>
+                </div>
+                <div class="buttons">
+                    <button type="submit" id= "add">
+                        <span><i class="fas fa-plus"></i></span>
+                        Add Task
+                    </button>
+                    <button type="submit" id= "delete">
+                        <span><i class="fas fa-trash-alt"></i></span>
+                        Delete Task
+                    </button>
+                </div>
+            </form>
+        </div>
+
+        <div class= "tasks">
+            <% for(task of tasks){ %>
+                <div class="task">
+                    <div class= "part-1">
+                        <input type="checkbox" id="desc">
+                        <label for="desc"> <%= task.description %> </label>
+                        <div id= "date">
+                            <span><i class="far fa-calendar-alt"></i></span>
+                            <%= task.date %>
+                        </div>    
+                    </div>
+                    <div class="part-2">
+                        <div id= "tag">
+                            <%= task.category %>
+                        </div>
+                    </div>
+                </div> 
+            <%} %>
+        </div>
+    </div>
+   
+    <script src= "/js/home.js"></script>
 </body>
 </html>
