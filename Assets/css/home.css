@@ -6,7 +6,7 @@
 .container{
     width: 70%;
     margin: auto;
-    box-shadow: 1px 1px 1px 1px gray;
+    box-shadow: 1px 1px 10px 1px gray;
     margin-top: 15px;
 }
 
@@ -23,7 +23,7 @@
     border-top: 2px solid gray;
     margin-top: 10px;
 }
-input{
+.description input, #time input{
     width: 90%;
     border: none;
     margin-left: 8px;
@@ -102,19 +102,33 @@ button:focus{
     border-top: 1px solid gray;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: space-evenly;
+    height: 100px;
 }
 .part-1{
-    width: 80%;
+    width: 70%;
     margin: 10px;
 }
 .part-2{
-    width: 20%;
+    width: 10%;
+}
+#date{
+    padding-left: 20px;
+    margin-top: 5px;
+    color: gray;
+    font-weight: 400;
 }
 #tag{
     width: 100%;
     color: white;
-    padding: 5px;
+    padding: 9px;
     font-size: 1.1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    background-color: purple;
+}
+.part-1 label{
+    font-size: 1.2rem;
+    opacity: 0.8;
 }
 

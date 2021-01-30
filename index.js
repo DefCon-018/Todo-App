@@ -9,8 +9,18 @@ app.use(express.static('Assets'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+let allTask = [
+    {
+        description: "hello",
+        date: '20-10-1999',
+        category: 'personal'
+    }
+]
+
 app.get('/', function(req, res){
-    return res.render('home');
+    return res.render('home', {
+        tasks: allTask
+    });
 })
 
 app.post('/create-task', function(req, res){
