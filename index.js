@@ -3,6 +3,7 @@ const path = require('path');
 const port = 8000;
 const app = express();
 const db = require('./config/mongoose');
+const Todo = require('./models/data');
 
 app.use(express.urlencoded());
 app.use(express.static('Assets'));
@@ -10,23 +11,32 @@ app.use(express.static('Assets'));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-let allTask = [
-    {
-        description: "hello",
-        date: '20-10-1999',
-        category: 'personal'
-    }
-]
 
 app.get('/', function(req, res){
-    return res.render('home', {
-        tasks: allTask
-    });
+    Todo.find({}, function(err, todos){
+        if(err){
+            console.log('error', err);
+            return;
+        }
+        res.render('home', {
+            tasks: todos
+        })
+    })
 })
 
 app.post('/create-task', function(req, res){
     console.log(req.body);
-    return res.redirect('back');
+    Todo.create({
+        description: req.body.description,
+        category: req.body.category,
+        date: req.body.date
+    }, function(err, newTask){
+        if(err){
+            console.log("error", err);
+        }
+        console.log(newTask);
+        return res.redirect('back');
+    })
 })
 
 app.post('/test', function(req, res){
