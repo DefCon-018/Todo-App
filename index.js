@@ -39,9 +39,16 @@ app.post('/create-task', function(req, res){
     })
 })
 
-app.post('/test', function(req, res){
-    console.log(req.body);
-    return res.redirect('back');
+app.get('/delete-task', function(req, res){
+    let id= req.query.id;
+    console.log(id);
+    Todo.findByIdAndDelete(id, function(err){
+        if(err){
+            console.log(err);
+            return;
+        }
+        res.redirect('back');
+    })
 })
 
 app.listen(port, function(err){

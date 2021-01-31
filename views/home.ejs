@@ -39,10 +39,12 @@
                         <span><i class="fas fa-plus"></i></span>
                         Add Task
                     </button>
-                    <button type="submit" id= "delete">
-                        <span><i class="fas fa-trash-alt"></i></span>
-                        Delete Task
-                    </button>
+                    <a href= "/delete-task/?id=<%= %>">
+                        <button id= "delete">
+                            <span><i class="fas fa-trash-alt"></i></span>
+                            Delete Task
+                        </button>
+                    </a>
                 </div>
             </form>
         </div>
@@ -58,11 +60,16 @@
                             <%= task.date %>
                         </div>    
                     </div>
-                    <div class="part-2">
-                        <div id= "tag">
-                            <%= task.category %>
+                    <% if(task.category === ''){ %>
+                        <div>
+                        </div> 
+                    <%}else{ %>
+                        <div class="part-2">
+                            <div id= "tag">
+                                <%= task.category %>
+                            </div>
                         </div>
-                    </div>
+                    <%} %>
                 </div> 
             <%} %>
         </div>
